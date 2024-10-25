@@ -1,11 +1,11 @@
 module github.com/a-kataev/gitlab-reviewer-bot
 
-go 1.22.5
+go 1.23.2
 
 require (
 	github.com/spf13/pflag v1.0.5
 	github.com/stretchr/testify v1.9.0
-	github.com/xanzy/go-gitlab v0.107.0
+	github.com/xanzy/go-gitlab v0.112.0
 )
 
 require (
