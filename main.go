@@ -11,7 +11,7 @@ import (
 	"time"
 
 	"github.com/spf13/pflag"
-	"github.com/xanzy/go-gitlab"
+	gitlab "gitlab.com/gitlab-org/api/client-go"
 )
 
 func main() {
@@ -26,7 +26,7 @@ func main() {
 	flag.StringVar(&gitlabToken, "gitlab-token", gitlabToken, "")
 
 	if err := flag.Parse(os.Args[1:]); err != nil {
-		if !errors.Is(pflag.ErrHelp, err) {
+		if !errors.Is(err, pflag.ErrHelp) {
 			slog.Error("flag error", slog.String("error", err.Error()))
 		}
 

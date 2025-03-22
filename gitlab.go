@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/xanzy/go-gitlab"
+	gitlab "gitlab.com/gitlab-org/api/client-go"
 )
 
 type Gitlab struct {
@@ -95,7 +95,7 @@ func (g *Gitlab) listMergeRequests(ctx context.Context, opts *gitlab.ListMergeRe
 		mergeRequest := &MergeRequest{
 			ID:        mr.IID,
 			ProjectID: mr.ProjectID,
-			Draft:     mr.WorkInProgress,
+			Draft:     mr.Draft,
 			Author: User{
 				ID:       mr.Author.ID,
 				Name:     mr.Author.Name,
